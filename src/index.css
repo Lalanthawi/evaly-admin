@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inria Sans', sans-serif;
+}
+
+code {
+  font-family: 'Inria Sans', sans-serif;
+}
+
+header {
+  background-color: #FAFAFA !important;
+}
+
+.cursor-pointer-custom {
+  cursor: pointer;
+}
+
+.custom-pending-color {
+  color: #FFC600
+}
+
+.custom-completed-color {
+  color: #28C76F
+}
+
+.custom-canceled-color {
+  color: #EA5455
+}
+
+.custom-badge span:nth-child(2) {
+  background-color: #EA5455 !important;
+  color: white;
+}
+
+.custom-dot span {
+  border: 2px solid white
+}
+
+.my-custom-chart-grid div {
+  min-height: 0 !important;
+}
+
+.custom-report-graph,
+.custom-total-users-graph div {
+  min-height: 0 !important;
+}
+
+.custom-total-users-graph {
+  margin-top: -27px;
+  margin-left: -10px;
+}
+
+.apexcharts-canvas,
+.apexcharts-canvas svg {
+  width: 100% !important;
+}
+
+.my-custom-chart-grid div:nth-child(2) {
+  min-height: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .top-selling-cat {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 663px) {
+  .top-selling-cat {
+    height: 500px !important;
+  }
+}
+
+@media screen and (max-width: 656px) {
+  .top-selling-cat {
+    height: 500px !important;
+  }
+}
+
+@media screen and (max-width: 646px) {
+  .top-selling-cat {
+    height: 500px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .top-selling-cat {
+    height: 370px !important;
+  }
+}
+
+.circle-container {
+  left: 26px;
+  top: 31px;
+  position: relative;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle-1 {
+  background-color: #0FB7FF;
+  z-index: 2;
+  left: 8vw;
+  top: 7vw;
+  width: 11vw;
+  height: 11vw;
+}
+
+.circle-2 {
+  background-color: #1EB564;
+  z-index: 2;
+  left: 2vw;
+  top: 10vw;
+  width: 8vw;
+  height: 8vw;
+}
+
+.circle-3 {
+  background-color: #0F60FF;
+  z-index: 1;
+  left: 0vw;
+  top: 0vw;
+  width: 13vw;
+  height: 13vw;
+}
+
+@media screen and (max-width: 767px) {
+  .top-selling-cat {
+    height: 550px;
+  }
+
+  .cat-name,
+  .per-day {
+    font-size: 2vw !important;
+  }
+
+  .cat-cash {
+    font-size: 5vw !important;
+  }
+
+  .circle-container {
+    left: 26px;
+    top: 31px;
+    position: relative;
+  }
+
+  .circle-1 {
+    background-color: #0FB7FF;
+    z-index: 2;
+    left: 25vw;
+    top: 18vw;
+    width: 35vw;
+    height: 35vw;
+  }
+
+  .circle-2 {
+    background-color: #1EB564;
+    z-index: 2;
+    left: 4vw;
+    top: 28vw;
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .circle-3 {
+    background-color: #0F60FF;
+    z-index: 1;
+    left: 0vw;
+    top: 0vw;
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+@media screen and (max-width: 819px) {
+  .vs-last-responsiveness {
+    font-size: 12px !important;
+    padding-left: 6px !important;
+  }
+}
+
+@media screen and (max-width: 819px) {
+  .customized-responsive-header-title {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (max-width: 537px) {
+  .customized-responsive-header-title {
+    font-size: 18px !important;
+  }
+}
+
+.ck-editor__editable_inline {
+  height: 250px;
+}

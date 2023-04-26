@@ -1,0 +1,126 @@
+import { React, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import MuiBreadcrumbs from "@mui/material/Breadcrumbs";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
+import MainCard from "../MainCard";
+
+const Breadcrumbs = ({ navigation, title, ...others }) => {
+  const location = useLocation();
+  const [main, setMain] = useState();
+  const [item, setItem] = useState();
+  const isMobileView = useMediaQuery("(max-width:767px)");
+  // set active item state
+  const getCollapse = (menu) => {
+    if (menu.children) {
+      menu.children.filter((collapse) => {
+        if (collapse.type && collapse.type === "collapse") {
+          getCollapse(collapse);
+        } else if (collapse.type && collapse.type === "item") {
+          if (location.pathname === collapse.url) {
+            setMain(menu);
+            setItem(collapse);
+          }
+        }
+        return false;
+      });
+    }
+  };
+
+  useEffect(() => {
+    navigation?.items?.map((menu) => {
+      if (menu.type && menu.type === "group") {
+        getCollapse(menu);
+      }
+      return false;
+    });
+  });
+
+  // only used for component demo breadcrumbs
+  if (location.pathname === "/breadcrumbs") {
+    location.pathname = "/dashboard/analytics";
+  }
+
+  let mainContent;
+  let itemContent;
+  let breadcrumbContent = <Typography />;
+  let itemTitle = "";
+
+  // collapse item
+  if (main && main.type === "collapse") {
+    mainContent = (
+      <Typography
+        component={Link}
+        to={document.location.pathname}
+        variant="h6"
+        sx={{ textDecoration: "none" }}
+        color="textSecondary"
+      >
+        {main.title}
+      </Typography>
+    );
+  }
+
+  // items
+  if (item && item.type === "item") {
+    itemTitle = item.title;
+    itemContent = (
+      <Typography
+        color="textSecondary"
+        variant="h6"
+        sx={{ textDecoration: "none" }}
+      >
+        {itemTitle}
+      </Typography>
+    );
+
+    // main
+    if (item.breadcrumbs !== false) {
+      breadcrumbContent = (
+        <MainCard
+          border={false}
+          sx={{ mb: 3, bgcolor: "transparent" }}
+          {...others}
+          content={false}
+        >
+          <Grid
+            container
+            direction="column"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+            spacing={1}
+          >
+            <Grid item>
+              {title && (
+                <Grid item sx={{ mb: isMobileView ? 0 : 1 }}>
+                  <Typography
+                    variant="h4"
+                    style={{ fontSize: isMobileView && 14 }}
+                  >
+                    {item.title}
+                  </Typography>
+                </Grid>
+              )}
+              <MuiBreadcrumbs aria-label="breadcrumb">
+                <Typography
+                  component={Link}
+                  to="/"
+                  color="textSecondary"
+                  variant="h6"
+                  sx={{ textDecoration: "none" }}
+                >
+                  Home
+                </Typography>
+                {mainContent}
+                {itemContent}
+              </MuiBreadcrumbs>
+            </Grid>
+          </Grid>
+        </MainCard>
+      );
+    }
+  }
+
+  return breadcrumbContent;
+};
+
+export default Breadcrumbs;
