@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "pages/dashboard";
-import OrderManamgement from "pages/order-management";
+import OrderManagement from "pages/order-management";
 import Customers from "pages/customers";
 import CustomerDetail from "pages/customer-detail";
 import Transactions from "pages/transactions";
@@ -13,13 +13,12 @@ import AdminManagement from "pages/admin";
 import AdminRoles from "pages/admin-roles";
 import AddProducts from "pages/add-product";
 import BrandsManagement from "pages/brands-management";
-import ColorsManagement from "pages/colors-management";
 
 const DashboardRoutes = () => {
   return (
     <Routes>
       <Route path="dashboard" element={<Dashboard />} />
-      <Route path="order-management" element={<OrderManamgement />} />
+      <Route path="order-management" element={<OrderManagement />} />
       <Route path="customers" element={<Customers />} />
       <Route path="customer-detail" element={<CustomerDetail />} />
       <Route path="transactions" element={<Transactions />} />
@@ -32,7 +31,6 @@ const DashboardRoutes = () => {
       <Route path="admin-roles" element={<AdminRoles />} />
       <Route path="add-products" element={<AddProducts />} />
       <Route path="brands-management" element={<BrandsManagement />} />
-      <Route path="colors" element={<ColorsManagement />} />
     </Routes>
   );
 };

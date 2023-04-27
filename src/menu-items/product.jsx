@@ -27,17 +27,7 @@ const product = {
       unSelectedIcon: "/assets/un-selected-product.svg",
       breadcrumbs: false,
       isIcon: false,
-    },
-    {
-      id: "colors",
-      title: "Colors",
-      type: "item",
-      url: "/colors",
-      iconSelected: <FontAwesomeIcon icon={faPalette} style={{ fontSize }} />,
-      unSelectedIcon: <FontAwesomeIcon icon={faPalette} style={{ fontSize }} />,
-      breadcrumbs: false,
-      isIcon: true,
-    },
+    }
   ],
 };
 

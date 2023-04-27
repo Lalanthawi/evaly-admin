@@ -40,7 +40,7 @@ const MainLayout = () => {
             <Drawer open={open} handleDrawerToggle={handleDrawerToggle} />
             <Box
               component="main"
-              sx={{ width: 0, flexGrow: 1, p: { xs: 2, sm: 3 } }}
+              sx={{ width: 0, flexGrow: 1, p: { xs: 2, sm: 3 }}}
             >
               <Toolbar />
               <DashboardRoutes />

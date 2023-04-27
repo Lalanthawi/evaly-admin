@@ -19,7 +19,7 @@ const closedMixin = (theme) => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: "hidden",
-  width: 0,
+  width: '90px',
   borderRight: "none",
   boxShadow: theme.customShadows.z1,
 });
